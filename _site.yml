@@ -1,5 +1,5 @@
 name: "P8105 HW4 Site"
-output_dir: "docs"      # 生成网页到 docs 文件夹
+output_dir: "." 
 
 navbar:
   title: "P8105 HW4"
