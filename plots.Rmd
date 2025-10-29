@@ -1,6 +1,0 @@
----
-title: "plots"
-output: html_document
----
-
-assuming there are some plots
