@@ -1,6 +1,81 @@
 ---
-title: "resume"
-output: html_document
+title: "Resume"
+output:
+  html_document:
+    toc: false
 ---
 
-here's the resume.
+<!-- Contact -->
+### Yuyang (Jerry) Wang
+
+- [wangyuyang585@gmail.com](mailto:wangyuyang585@gmail.com) 
+- (585)354-9988  
+- GitHub: <https://github.com/wyy4399>
+
+---
+
+### Education
+
+**Columbia University, New York, NY** — *Master of Science in Biostatistics*  
+09/2025 – Present
+
+**University of Rochester, Rochester, NY** — *B.S., Triple Major in Data Science, Economics, Business (Information Systems); Minor in Computer Science; Visual Production cluster*  
+09/2021 – 05/2025  
+Dean’s List: Spring 2022, Fall 2022, Spring 2024
+
+---
+
+### Technical Skills
+
+- **Languages:** Python, R, SQL, Java, STATA  
+- **Tools:** AutoDock, Biopython, Git, Docker, Excel, Tableau  
+- **Techniques:** A/B Testing, Machine Learning, Data Visualization, Genomic Data Processing
+
+---
+
+### Research Experience
+
+**Research Assistant (Computational Biology / CRISPR)** 
+— Cong Lab, Stanford University, Stanford, CA  
+06/2025 – Present  
+- Working on SSAP-based genome editing technologies using the DAISY platform.  
+- Build data pre-processing and alignment pipelines for CRISPR screen analysis.  
+- Use Biopython and custom R scripts to model editing efficiency from HTS data.  
+- Contribute to experimental design and computational protocol documentation.
+
+**Research Assistant (with Prof. Geguang Pu)** 
+— SmartRocket Research, East China Normal University, Shanghai, China  
+08/2024 – 01/2025  
+- Developed **SmartRocket**, a tool for testing C++ code using real-world / OSS libraries.  
+- Ran performance testing on Qtbase, OpenCV, SQLite, PostgreSQL, and industrial codebases.  
+- Conducted code coverage evaluation and data analysis for optimization insights.
+
+**Research Intern (with Prof. Bo Liang)** 
+— RSV Drug Discovery, Emory University, Atlanta, GA  
+06/2024 – 08/2024  
+- Queried **ChEMBL** to identify candidate compounds against RSV polymerase.  
+- Performed binding energy calculations using AutoDock Vina & AutoDock 4.2.  
+- Supported molecular screening and in-silico modeling of RdRP inhibitors.
+
+**Research Assistant (with Prof. Zhiguo Xiao)** 
+— High-Frequency Trading Research, Fudan University, Shanghai, China  
+06/2023 – 09/2023  
+- Analyzed 1.8M+ Chinese futures trades; built a **60×20 accuracy matrix** with ~70% success.  
+- Used XGBoost, LSTM, and Random Forest for strategy development and evaluation.
+
+---
+
+### Professional Experience
+
+**Business Data Analyst Intern** 
+— Roche Pharma China, Shanghai  
+05/2024 – 08/2024 (Dept. of Finance, Strategy and Operational Excellence)  
+- Built commercial data models and generated cross-functional insights (sales/marketing/product).  
+- Supported ad-hoc analytics requests and standardized reporting workflows.
+
+**Lab Teaching Assistant (Computer Science)** 
+— University of Rochester  
+02/2023 – 12/2023  
+- Led Python programming workshops and provided one-on-one coding support.  
+- Graded assignments and delivered structured feedback.
+
