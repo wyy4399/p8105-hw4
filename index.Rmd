@@ -3,6 +3,9 @@ title: "P8105 HW4"
 output: html_document
 ---
 
-Hi there, here's p8105 homework4 of Yuyang Wang. I have already had a personal website done by html, you can access by https://jerrywang.site. I'm using a project site for this homework.
+Hi there, here's p8105 homework4 of Yuyang Wang. I have already had a github page done by html, you can access by https://jerrywang.site or https://wyy4399.github.io. I'm using a project site for this homework.
 
+
+
+Use the navbar to open **Resume** and **Dashboard**.
 

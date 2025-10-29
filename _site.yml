@@ -1,20 +1,22 @@
 name: "P8105 HW4 Site"
-output_dir: "." 
+output_dir: "."
 
 navbar:
   title: "P8105 HW4"
   left:
     - text: "Home"
       href: index.html
-    - text: "HW4"
-      href: hw4.html
-    - text: "About"
-      href: about.html
+    - text: "Resume"
+      href: resume.html
+    - text: "Dashboard"
+      href: dashboard.html
   right:
     - text: "GitHub"
       href: "https://github.com/wyy4399"
     - text: "Email"
       href: "mailto:yw4660@cumc.columbia.edu"
+    - text: "LinkedIn"
+      href: "https://www.linkedin.com/in/yuyang-wang-788895219/"
 
 output:
   html_document:

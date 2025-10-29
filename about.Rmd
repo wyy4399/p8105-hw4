@@ -1,6 +1,10 @@
 ---
-title: "about"
-output: html_document
+title: "About Me"
 ---
 
-about the hw4
+## Yuyang Wang
+- Columbia Biostatistics (MS, ’25)
+- Interests: functional genomics, LLM agents, data viz
+
+Email：yw4660@cumc.columbia.edu  
+GitHub：<https://github.com/wyy4399>
