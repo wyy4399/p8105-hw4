@@ -1,0 +1,23 @@
+name: "P8105 HW4 Site"
+output_dir: "docs"      # 生成网页到 docs 文件夹
+
+navbar:
+  title: "P8105 HW4"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "HW4"
+      href: hw4.html
+    - text: "About"
+      href: about.html
+  right:
+    - text: "GitHub"
+      href: "https://github.com/wyy4399"
+    - text: "Email"
+      href: "mailto:yw4660@cumc.columbia.edu"
+
+output:
+  html_document:
+    theme: cosmo
+    toc: true
+    code_folding: show
