@@ -1,6 +1,119 @@
+# Instacart Interactive Dashboard
+
 ---
-title: "dashboard"
-output: html_document
+title: "Instacart Interactive Dashboard"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
-assuming this is the dashboard
+```{r setup, include=FALSE}
+# load required packages
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+
+# set a reproducible seed
+set.seed(123)
+
+# load the Instacart data
+data("instacart")
+
+# Sample a subset of rows for boxplots and bar charts
+instacart_sample <- instacart |>
+  sample_n(20000)
+
+order_summary <- instacart |>
+  group_by(order_id, days_since_prior_order) |>
+  summarise(
+    total_items = n(),
+    reordered_ratio = mean(reordered)
+  ) |>
+  ungroup() |>
+  drop_na(days_since_prior_order)
+
+order_summary_sample <- order_summary |> sample_n(5000)
+
+# Convert day‑of‑week codes (0 = Sunday, …, 6 = Saturday) to a factor with readable labels for the boxplot.  This makes hover labels more informative.
+day_labels <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+instacart_sample <- instacart_sample |>
+  mutate(order_dow_factor = factor(order_dow, levels = 0:6, labels = day_labels))
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Total items vs days since prior order
+
+This scatterplot explores the relationship between the number of items ordered in a single Instacart order and the time elapsed since the customer’s previous order.  Each point represents a single order from the sampled dataset.  The colour of the points represents the average reordering rate (proportion of items in the order that were previously purchased), which can highlight different buying behaviours.  Hover over a point to see the order ID and other details.
+
+```{r}
+plot_ly(
+  data = order_summary_sample,
+  x = ~days_since_prior_order,
+  y = ~total_items,
+  type = "scatter",
+  mode = "markers",
+  color = ~reordered_ratio,
+  text = ~paste(
+    "Order ID: ", order_id, "<br>",
+    "Days since prior order: ", days_since_prior_order, "<br>",
+    "Total items: ", total_items, "<br>",
+    "Reordered ratio: ", round(reordered_ratio, 2)
+  ),
+  hoverinfo = "text"
+) |>
+  layout(
+    xaxis = list(title = "Days Since Prior Order"),
+    yaxis = list(title = "Total Items in Order"),
+    colorbar = list(title = "Reorder Ratio")
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Orders by department
+
+Interactivity in bar charts is useful for exploring categorical data.  In this bar chart the total number of items ordered from the top ten departments is displayed.  Bars are ordered from the smallest to largest department to emphasise differences in order volume.
+
+```{r}
+department_counts <- instacart |>
+  count(department) |>
+  top_n(10, n) |>
+  mutate(department = fct_reorder(department, n))
+
+plot_ly(
+  data = department_counts,
+  x = ~department,
+  y = ~n,
+  type = "bar",
+  color = ~department
+) |>
+  layout(
+    xaxis = list(title = "Department"),
+    yaxis = list(title = "Number of Items"),
+    showlegend = FALSE
+  )
+```
+
+### Order time by day of week
+
+Boxplots in Plotly summarise distributions while still allowing interactive exploration.  This boxplot shows the distribution of ordering times across days of the week (0 = Sunday, …, 6 = Saturday).  Hover over a box to see five‑number summary information for that day.
+
+```{r}
+plot_ly(
+  data = instacart_sample,
+  x = ~order_dow_factor,
+  y = ~order_hour_of_day,
+  color = ~order_dow_factor,
+  type = "box"
+) |>
+  layout(
+    xaxis = list(title = "Day of Week"),
+    yaxis = list(title = "Order Hour of Day"),
+    showlegend = FALSE
+  )
+```
